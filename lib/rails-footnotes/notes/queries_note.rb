@@ -1,7 +1,7 @@
 module Footnotes
   module Notes
     class QueriesNote < AbstractNote
-      cattr_accessor :alert_db_time, :alert_sql_number, :orm, :ignored_regexps, :instance_writter => false
+      cattr_accessor :alert_db_time, :alert_sql_number, :orm, :ignored_regexps, :instance_writer => false
       @@alert_db_time    = 16.0
       @@alert_sql_number = 8
       @@query_subscriber = nil
@@ -103,7 +103,7 @@ module Footnotes
       attr_accessor :events, :ignore_regexps
 
       def initialize(orm)
-        super() 
+        super()
         @events = []
         orm.each {|adapter| ActiveSupport::LogSubscriber.attach_to adapter, self}
       end
